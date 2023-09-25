@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("moveHorizontal:" + moveHorizontal);
 
         float moveVertical = Input.GetAxis("Vertical");
+
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
         //   if (Input.GetKeyDown(KeyCode.D))
         //{ 
         //}
