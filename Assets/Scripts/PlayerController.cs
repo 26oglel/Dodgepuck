@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10.0f;
-    public float xRange;
+    private float xRange;
     public float yrange;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Keep Player Within xRange (Left and Right sides)
+        if(transform.position.x > xRange)
+        {
+            transform.position = new Vector2(xRange,transform.position.y);
+        }
+        
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         Debug.Log("moveHorizontal:" + moveHorizontal);
 
